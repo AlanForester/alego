@@ -5,40 +5,6 @@ type RawTransactionRequest struct {
 	TransactionBytes string `json:"transaction_bytes"`
 }
 
-//type RawTransactionEndpoint func() alego.RPCQuery
-
-//// IsInline says whether message is an inline message.
-//func (c *RawTransactionEndpoint) RawDecode() alego.RPCObject {
-//	return &alego.RPCQuery{
-//		method:   "",
-//		params:   nil,
-//		response: nil,
-//	}
-//}
-//
-//// Check that the transaction is valid
-//func (c *RawTransactionEndpoint) RawValidate() *ValidateTransactionResponse {
-//	return &ValidateTransactionResponse{}
-//}
-//
-//// Send raw transaction bytes to this node to be added into the mempool. If valid, the transaction will be stored and propagated to all peers.
-//func (c *RawTransactionEndpoint) Send() *TransactionResponse {
-//	return &TransactionResponse{}
-//}
-//
-//type TransactionEndpoint struct{}
-//
-//// Transaction methods represents operations with transactions
-//type TransactionRequest struct {
-//	TransactionId string `json:"transaction_id"`
-//}
-//
-//// Check that the transaction is valid
-//func (c *TransactionEndpoint) GetInfo() *RawTransactionResponse {
-//	return &RawTransactionResponse{}
-//}
-//
-
 type TransactionResponse struct {
 	Result string `json:"result"`
 }
