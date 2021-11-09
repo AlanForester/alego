@@ -133,7 +133,7 @@ func TestGetBlockTemplate(t *testing.T) {
 		client.logger.Errorf("Error on GetBlockTemplate: %v", err.Error())
 	}
 
-	assert.Error(t, err)
+	assert.NoError(t, err)
 }
 
 func TestGetBlockHash(t *testing.T) {

@@ -74,17 +74,3 @@ type Settings struct {
 	// Offline allows to create a aleo without network for testing purposes.
 	Offline bool
 }
-
-// Command represents a Aleo command.
-type Command struct {
-	// Text is a text of the command, 1-32 characters.
-	// Can contain only lowercase English letters, digits and underscores.
-	Method string `json:"command"`
-
-	// Description of the command, 3-256 characters.
-	//Response RPCObject `json:"description"`
-}
-
-func (b Aleo) GetMe() {
-
-}
