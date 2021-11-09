@@ -3,7 +3,7 @@ package rpcapi
 type NetworkEndpoint struct{}
 
 // Block methods represents a Oleo block.
-type Network struct {
+type NetworkResponse struct {
 	NodeCount             int     `json:"node_count"`
 	ConnectionCount       int     `json:"connection_count"`
 	Density               float64 `json:"density"`
@@ -22,10 +22,6 @@ type Network struct {
 	} `json:"vertices"`
 }
 
-func (b NetworkEndpoint) ConnectionCount() int {
-	return 0
-}
-
-func (NetworkEndpoint) Graph() *Network {
-	return &Network{}
+type ConnectionCountResponse struct {
+	Result int
 }

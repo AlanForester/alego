@@ -174,6 +174,33 @@ func TestGetBestBlockHash(t *testing.T) {
 
 	assert.Error(t, err)
 }
+
+func TestGetNetworkGraph(t *testing.T) {
+	var client = client()
+	_, err := client.GetNetworkGraph()
+	if err != nil {
+		client.logger.Errorf("Error on GetNetworkGraph: %v", err.Error())
+	}
+	if _, ok := err.(jsonrpc2.Error); ok {
+		client.logger.Errorf("Error on GetNetworkGraph: %v", err.Error())
+	}
+
+	assert.Error(t, err)
+}
+
+func TestGetConnectionCount(t *testing.T) {
+	var client = client()
+	_, err := client.GetConnectionCount()
+	if err != nil {
+		client.logger.Errorf("Error on GetConnectionCount: %v", err.Error())
+	}
+	if _, ok := err.(jsonrpc2.Error); ok {
+		client.logger.Errorf("Error on GetConnectionCount: %v", err.Error())
+	}
+
+	assert.Error(t, err)
+}
+
 func client() *Client {
 	return NewClient("alex", "842655", "52.8.172.237:443")
 }

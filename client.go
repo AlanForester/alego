@@ -114,6 +114,18 @@ func (c *Client) DecodeRawTransaction(transaction_bytes string) (interface{}, er
 	return me, err
 }
 
+func (c *Client) GetNetworkGraph() (interface{}, error) {
+	me := rpcapi.NetworkResponse{}
+	err := c.doRequest("getnetworkgraph", nil, &me)
+	return me, err
+}
+
+func (c *Client) GetConnectionCount() (interface{}, error) {
+	me := rpcapi.ConnectionCountResponse{}
+	err := c.doRequest("getconnectioncount", nil, &me)
+	return me, err
+}
+
 func (c *Client) doRequest(method string, request interface{}, response interface{}) error {
 	err := c.rpcClient.Request(nil, c.url, method, request, &response)
 	if _, ok := err.(jsonrpc2.Error); ok {
